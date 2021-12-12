@@ -12,4 +12,8 @@
     <ProjectReference Include="..\libfoo\libfoo.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Text.Encodings.Web" Version="4.5.0" />
+  </ItemGroup>
+
 </Project>
