@@ -12,11 +12,11 @@ RUN dotnet restore
 # dependencies vulnerability scan
 FROM aquasec/trivy AS trivy
 COPY --from=restore /source /source
-RUN trivy fs \
-    --exit-code 1 \
-    --no-progress \
-    --ignore-unfixed \
-    --severity "HIGH,CRITICAL" \
+RUN trivy fs `
+    --exit-code 1 `
+    --no-progress `
+    --ignore-unfixed `
+    --severity "HIGH,CRITICAL" `
     --security-checks vuln /source
 
 # copy everything else and build app
